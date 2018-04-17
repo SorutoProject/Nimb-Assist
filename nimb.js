@@ -34,7 +34,7 @@ function analysis(nimbdata,datas,ans){
 	//nimbデータがURL形式のとき
 	if(length == 1){
 		ans.innerHTML = nimbdata[0];
-		window.setTimeout("MovePage('" + url +"')",500);
+		window.setTimeout("MovePage('" + nimbdata[1] +"')",500);
 	}
 	//nimbデータが検索エンジン込み形式のとき
 	else if(length == 3){
