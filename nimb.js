@@ -15,6 +15,9 @@ function reply(){
 	var ans = document.getElementById("ans");//Nimb 返答エリアのエレメントを取得
 	var datas = sjws.split(ut);//Soruto Spliterを使って、サービス名、検索ワードを取得
 	var snameurl = encodeURI(datas[0]).toLowerCase().split("%").join("");
+	if(ut=="" || datas[0] == ""){
+		ans.innerHTML="申し訳ありませんが、もう少し詳しく入力してください。";
+	}else{
 	//nimb データ取得開始
   var xhr = new XMLHttpRequest();
   xhr.open('GET', "txtdb/" + snameurl + ".txt", true);
@@ -29,6 +32,8 @@ function reply(){
     }
   };
   xhr.send(null);
+  
+	}
 }
 function analysis(nimbdata,datas,ans){
 	var nimbsplit = nimbdata.split("|");//nimb データを配列に分割する
