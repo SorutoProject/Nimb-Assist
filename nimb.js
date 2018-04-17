@@ -18,10 +18,8 @@ function reply(){
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET',"txtdb/" + mencode + ".txt", true);
 	xhr.onreadystatechange = function(){
-    if (xhr.readyState === 4 && xhr.status === 200){
       analysis(xhr.responseText,datas,ans);
-	}
-  };
+};
   xhr.send(null);
 }
 function analysis(nimbdata,datas,ans){
