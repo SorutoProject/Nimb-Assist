@@ -68,3 +68,8 @@ function analysis(nimbdata,datas,ans){
 function MovePage(url){
 	location.href=url;
 }
+function Key_on(event){
+	if(event.keyCode==13){
+		reply();
+	}
+}
