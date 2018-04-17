@@ -20,8 +20,6 @@ function reply(){
 	xhr.onreadystatechange = function(){
     if (xhr.readyState === 4 && xhr.status === 200){
       analysis(xhr.responseText,datas,ans);
-    }else{
-		ans.innerHTML = '<span style="color:orange">データの取得に失敗しました</span>';
 	}
   };
   xhr.send(null);
