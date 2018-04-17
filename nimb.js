@@ -14,9 +14,10 @@ function reply(){
 	var encode = mencode.replace(/%/g , "");
 	var ans = document.getElementById("ans");//Nimb 返答エリアのエレメントを取得
 	var datas = sjws.split(ut);//Soruto Spliterを使って、サービス名、検索ワードを取得
+	var snameurl = encodeURI(datas[0]).toLowerCase().split("%").join("");
 	//nimb データ取得開始
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', "txtdb/" + mencode + ".txt", true);
+  xhr.open('GET', "txtdb/" + snameurl + ".txt", true);
   xhr.onreadystatechange = function(){
     // 本番用
     if (xhr.readyState === 4 && xhr.status === 200){
