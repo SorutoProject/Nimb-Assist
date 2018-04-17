@@ -28,9 +28,6 @@ function reply(){
     }
   };
   xhr.send(null);
-};
-
-
 }
 function analysis(nimbdata,datas,ans){
 	var nimbsplit = nimbdata.split("|");//nimb データを配列に分割する
