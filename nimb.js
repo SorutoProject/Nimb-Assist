@@ -15,12 +15,22 @@ function reply(){
 	var ans = document.getElementById("ans");//Nimb 返答エリアのエレメントを取得
 	var datas = sjws.split(ut);//Soruto Spliterを使って、サービス名、検索ワードを取得
 	//nimb データ取得開始
-	var xhr = new XMLHttpRequest();
-	xhr.open('GET',"txtdb/" + mencode + ".txt", true);
-	xhr.onreadystatechange = function(){
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', "txtdb/" + mencode + ".txt", true);
+  xhr.onreadystatechange = function(){
+    // 本番用
+    if (xhr.readyState === 4 && xhr.status === 200){
       analysis(xhr.responseText,datas,ans);
-};
+    }
+    // ローカルファイル用
+    if (xhr.readyState === 4 && xhr.status === 0){
+      analysis(xhr.responseText,datas,ans);
+    }
+  };
   xhr.send(null);
+};
+
+
 }
 function analysis(nimbdata,datas,ans){
 	var nimbsplit = nimbdata.split("|");//nimb データを配列に分割する
