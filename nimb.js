@@ -37,17 +37,17 @@ function analysis(nimbdata,datas,ans){
 	var length = nimbsplit.length;
 	/*
 	nimb データ配列
-	URLのみの形式: [0]:nimbの発言 [1]:開くURL 総配列数:1
-	検索エンジン込み形式: [0]:検索ワードがあるときの発言(*を検索キーワードに置き換え) [1]:←のときに使う検索URL [2]:検索ワードがカラのときの発言 [3]:←のときに開くURL 総配列数:3
+	URLのみの形式: [0]:nimbの発言 [1]:開くURL 総配列数:2
+	検索エンジン込み形式: [0]:検索ワードがあるときの発言(*を検索キーワードに置き換え) [1]:←のときに使う検索URL [2]:検索ワードがカラのときの発言 [3]:←のときに開くURL 総配列数:4
 	*/
 	
 	//nimbデータがURL形式のとき
-	if(length == 1){
+	if(length == 2){
 		ans.innerHTML = nimbsplit[0];
 		window.setTimeout("MovePage('" + nimbsplit[1] +"')",500);
 	}
 	//nimbデータが検索エンジン込み形式のとき
-	else if(length == 3){
+	else if(length == 4){
 		//ユーザーの検索キーワードがあるとき
 		if(datas[1]!=false){
 			ans.innerHTML = nimbsplit[0].split("*").join('"' + datas[1] + '"');
