@@ -33,21 +33,21 @@ function analysis(nimbdata,datas,ans){
 	
 	//nimbデータがURL形式のとき
 	if(length == 1){
-		ans.innerHTML = nimbdata[0];
-		window.setTimeout("MovePage('" + nimbdata[1] +"')",500);
+		ans.innerHTML = nimbsplit[0];
+		window.setTimeout("MovePage('" + nimbsplit[1] +"')",500);
 	}
 	//nimbデータが検索エンジン込み形式のとき
 	else if(length == 3){
 		//ユーザーの検索キーワードがあるとき
 		if(datas[1]!=false){
-			ans.innerHTML = nimbdata[0].split("*").join('"' + datas[1] + '"');
-			var swurl = encodeURI(nimbdata[1] + datas[1]);
+			ans.innerHTML = nimbsplit[0].split("*").join('"' + datas[1] + '"');
+			var swurl = encodeURI(nimbsplit[1] + datas[1]);
 			window.setTimeout("MovePage('" + swurl +"')",500);
 		}
 		//検索キーワードがないとき
 		else{
-			ans.innerHTML = nimbdata[2];
-			window.setTimeout("MovePage('" + nimbdata[3] +"')",500);
+			ans.innerHTML = nimbsplit[2];
+			window.setTimeout("MovePage('" + nimbsplit[3] +"')",500);
 		}
 	}
 	
