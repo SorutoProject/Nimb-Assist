@@ -32,7 +32,7 @@ function reply(){
     }
     // 404エラー時(データベースにないとき)
     if (xhr.readyState === 4 && xhr.status === 404){
-      ans.innerHTML = "申し訳ありませんが、私には\"" + ut + "\"を理解できませんでした";
+      ans.innerHTML = "申し訳ありませんが、<br>私には\"" + ut + "\"を理解できませんでした";
     }
   };
   xhr.send(null);
