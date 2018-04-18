@@ -18,6 +18,7 @@ function reply(){
 	if(ut=="" || datas[0] == ""){
 		ans.innerHTML="申し訳ありませんが、もう少し詳しく入力してください。";
 	}else{
+	ans.innerHTML = "考え中...";
 	//nimb データ取得開始
   var xhr = new XMLHttpRequest();
   xhr.open('GET', "txtdb/" + snameurl + ".txt", true);
